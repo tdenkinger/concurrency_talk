@@ -1,9 +1,15 @@
 module RbLightning
-  def self.do_run(collection, fun)
-    squares = []
+  def self.do_run(collection)
     collection.each do |i|
-      squares << fun.call(i)
+      factorial(i, 1)
     end
-    squares
+    :ok
+  end
+
+  private
+
+  def self.factorial(n, acc)
+    return if n == 1
+    factorial(n-1, acc*n)
   end
 end

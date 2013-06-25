@@ -1,15 +1,22 @@
 defmodule ExLightning do
-  def do_run(collection, fun) do
+  def do_run(collection) do
     me = self
-    squares = collection
+    collection
     |>
       Enum.map(fn (elem) ->
-        spawn fn -> (me <- {self, fun.(elem)}) end
+        spawn fn -> (me <- {self, factorial(elem, 1)}) end
       end)
     |>
       Enum.map(fn (pid) ->
         receive do {^pid, result} -> result end
       end)
-    squares
+      :ok
+  end
+
+  defp factorial(n, acc) do
+    case n do
+      1 -> {}
+      _ -> factorial(n-1, acc*n)
+    end
   end
 end
