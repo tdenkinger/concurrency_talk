@@ -4,6 +4,7 @@ defmodule ExLightningTest do
   use ExUnit.Case
 
   test "computes factorials correctly" do
-    assert ExLightning.do_run(1..2000) == :ok
+    upper_bound = 10000
+    assert ExLightning.do_run(1..upper_bound) == :ok
   end
 end
