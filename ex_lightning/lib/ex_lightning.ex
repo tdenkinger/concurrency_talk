@@ -4,7 +4,7 @@ defmodule ExLightning do
     collection
     |>
       Enum.map(fn (elem) ->
-        spawn fn -> (me <- {self, factorial(elem, 1)}) end
+        spawn fn -> (send me, {self, factorial(elem, 1)}) end
       end)
     |>
       Enum.map(fn (pid) ->
