@@ -1,6 +1,6 @@
 {application,fib,
              [{registered,[]},
               {description,"fib"},
+              {applications,[kernel,stdlib,elixir]},
               {vsn,"0.0.1"},
-              {modules,[]},
-              {applications,[kernel,stdlib,elixir]}]}.
+              {modules,['Elixir.Fib']}]}.
