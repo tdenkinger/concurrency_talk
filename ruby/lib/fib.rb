@@ -1,5 +1,5 @@
-module RbLightning
-  def self.do_run(collection)
+module Fib
+  def self.run(collection)
     collection.each do |i|
       factorial(i, 1)
     end
