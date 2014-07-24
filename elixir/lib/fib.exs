@@ -1,5 +1,5 @@
-defmodule ExLightning do
-  def do_run(collection) do
+defmodule FibTest do
+  def run(collection) do
     me = self
     collection
     |>
