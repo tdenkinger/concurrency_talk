@@ -1,4 +1,4 @@
-defmodule FibTest do
+defmodule Fib do
   def run(collection) do
     me = self
     collection
